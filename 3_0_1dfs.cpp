@@ -6,9 +6,11 @@ using std::vector;
 using std::pair;
 
 int visit(int curnt_postionon_path, int v, vector<vector<int>> &adj, vector<int> &visited){
+  std::cout<<"visit\n";
   visited[curnt_postionon_path]=1;
   int reached_v=0;
   for(int j=0;j<adj[curnt_postionon_path].size();j++){
+    std::cout<<j<<"--";
     if(!visited[adj[curnt_postionon_path][j]]){
 	     if(adj[curnt_postionon_path][j]==v){
                 reached_v=1;
@@ -16,9 +18,10 @@ int visit(int curnt_postionon_path, int v, vector<vector<int>> &adj, vector<int>
 	     }else{
 		reached_v= visit(adj[curnt_postionon_path][j],v,adj,visited);
 		if(reached_v){break;}
-	     }
+	     } 
        }
     }
+   std::cout<<"\n";
    return reached_v;
 }
 
