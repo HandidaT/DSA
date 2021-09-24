@@ -19,9 +19,9 @@ void explore(int current_positionon_path, vector<int> &visited,vector<vector<int
        else if(recur_list[adj[current_positionon_path][j]]){
 	          flag=1;
        }
-    }
-     
-    recur_list[current_positionon_path]=0;
+    }//All vertices reachable from this current vertice are explored and no cycle detected,
+     //so we can write false/0 for the recur_list of current vertice and backtrack i.e,
+    recur_list[current_positionon_path]=0;//return back to calling explore function
 }
 
 int acyclic(vector<vector<int> > &adj) {
