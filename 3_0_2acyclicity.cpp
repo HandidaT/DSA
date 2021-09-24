@@ -6,7 +6,6 @@
 
 using std::vector;
 using std::map;
-using std::pair;
 
 void explore(int current_positionon_path, vector<int> &visited,vector<vector<int> > &adj,
             int &flag,map<int, bool> &recur_list){
@@ -18,6 +17,8 @@ void explore(int current_positionon_path, vector<int> &visited,vector<vector<int
        }
        else if(recur_list[adj[current_positionon_path][j]]){
 	          flag=1;
+            std::cout<<"Cycle present\n";
+            return;//stop exploring when cycle found
        }
     }//All vertices reachable from this current vertice are explored and no cycle detected,
      //so we can write false/0 for the recur_list of current vertice and backtrack i.e,
