@@ -12,13 +12,14 @@ int visit(int curnt_postionon_path, int v, vector<vector<int>> &adj, vector<int>
   for(int j=0;j<adj[curnt_postionon_path].size();j++){
     std::cout<<j<<"--";
     if(!visited[adj[curnt_postionon_path][j]]){
-	     if(adj[curnt_postionon_path][j]==v){
+	     if(adj[curnt_postionon_path][j]==v){ 
                 reached_v=1;
                 break;
-	     }else{
-		reached_v= visit(adj[curnt_postionon_path][j],v,adj,visited);
-		if(reached_v){break;}
-	     } 
+	     }
+       else{
+         reached_v= visit(adj[curnt_postionon_path][j],v,adj,visited);
+         if(reached_v){break;}
+         } 
        }
     }
    std::cout<<"\n";
