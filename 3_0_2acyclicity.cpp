@@ -1,28 +1,30 @@
 #include <iostream>
 #include <vector>
 #include <map>
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 
 using std::vector;
 using std::map;
 
-void explore(int current_positionon_path, vector<int> &visited,vector<vector<int> > &adj,
+int explore(int current_positionon_path, vector<int> &visited,vector<vector<int> > &adj,
             int &flag,map<int, bool> &recur_list){
     visited[current_positionon_path]=1;
     recur_list[current_positionon_path]=true;
     for(int j=0;j<adj[current_positionon_path].size();j++){
        if(!visited[adj[current_positionon_path][j]]){
-	          explore(adj[current_positionon_path][j],visited,adj,flag,recur_list);
+	          flag=explore(adj[current_positionon_path][j],visited,adj,flag,recur_list);
        }
        else if(recur_list[adj[current_positionon_path][j]]){
 	          flag=1;
             std::cout<<"Cycle present\n";
-            return;//stop exploring when cycle found
+            return flag;//stop exploring when cycle found
        }
+       if(flag) return flag;
     }//All vertices reachable from this current vertice are explored and no cycle detected,
      //so we can write false/0 for the recur_list of current vertice and backtrack i.e,
     recur_list[current_positionon_path]=0;//return back to calling explore function
+    return flag;
 }
 
 int acyclic(vector<vector<int> > &adj) {
