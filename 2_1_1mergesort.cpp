@@ -1,8 +1,9 @@
 #include <iostream>
 
-void merge(int arr,int p, int q, int r, int n){
+void merge(int arr[],int p, int q, int r, int n){
     int i,j,k,lsize=q-p+1,rsize=r-q;
     int L[lsize],R[rsize];
+    //creating temporary left and right arrays
     for(i=0;i<lsize;i++){
         L[i]=arr[p+i];
     }
@@ -10,27 +11,55 @@ void merge(int arr,int p, int q, int r, int n){
         R[j]=arr[q+1+j];
     }
     i=0;
-    j=0
-    k=0;
+    j=0;
+    k=p;
+    //merging arrays in sorted order
+    while(i<lsize && j<rsize){
+        if(L[i]<=R[j]){
+            arr[k]=L[i];
+            i++;
+        }
+        else{
+            arr[k]=R[j];
+            j++;
+        }
+        k++;
+    }
+    //merging the array with leftover elements
+    while(i<lsize){
+        arr[k]=L[i];
+        i++;
+        k++;
+    }
+    while(j<rsize){
+        arr[k]=R[j];
+        j++;
+        k++;
+    }
 }
 
 void mergesort(int arr[], int l, int r, int n){
-    int mid=l+(r-1)/2;
-    mergesort(arr,l,mid,n);
-    mergesort(arr,mid+1,r,n);
-    merge(arr,l,mid,r,n);
+    if(l<r){
+        int m=(l+(r-1))/2;
+        mergesort(arr,l,m,n);
+        mergesort(arr,m+1,r,n);
+        merge(arr,l,m,r,n);
+    }
 }
 
 int main(){
-    size_t n;//size of the original array
+    int n;//size of the original array
     std::cin>>n;
     std::cout<<n;
     int arr[n];
     for(int i=0;i<n;i++){
         std::cin>>arr[i];
     }
-    mergesort(arr,0,n-1,n)
+    //Start Mergesort
+    mergesort(arr,0,n-1,n);
+    std::cout<<"\n\n";
+    //print out sorted array
     for(int i=0;i<n;i++){
-        std::cout<<"\n"<<arr[i];
+        std::cout<<arr[i];
     }
 }
