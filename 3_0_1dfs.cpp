@@ -27,7 +27,7 @@ int visit(int curnt_postionon_path, int v, vector<vector<int>> &adj, vector<int>
 }
 
 int reach(vector<vector<int> > &adj, int x, int y) {
-  vector<int> visited(adj.size(),0);
+  vector<int> visited(adj.size(),0);//visited or not array
   return visit(x,y,adj,visited);
 }
 

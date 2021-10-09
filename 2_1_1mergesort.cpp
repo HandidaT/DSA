@@ -1,6 +1,6 @@
 #include <iostream>
 
-void merge(int arr[],int p, int q, int r, int n){
+void merge(int arr[],int p, int q, int r){
     int i,j,k,lsize=q-p+1,rsize=r-q;
     int L[lsize],R[rsize];
     //creating temporary left and right arrays
@@ -43,7 +43,7 @@ void mergesort(int arr[], int l, int r, int n){
         int m=(l+(r-1))/2;
         mergesort(arr,l,m,n);
         mergesort(arr,m+1,r,n);
-        merge(arr,l,m,r,n);
+        merge(arr,l,m,r);
     }
 }
 

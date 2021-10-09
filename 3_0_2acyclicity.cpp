@@ -8,35 +8,39 @@ using std::vector;
 using std::map;
 
 int explore(int current_positionon_path, vector<int> &visited,vector<vector<int> > &adj,
-            int &flag,map<int, bool> &recur_list){
+            int &flag,map<int, bool> &parent_or_not){
     visited[current_positionon_path]=1;
-    recur_list[current_positionon_path]=true;
-    for(int j=0;j<adj[current_positionon_path].size();j++){
-       if(!visited[adj[current_positionon_path][j]]){
-	          flag=explore(adj[current_positionon_path][j],visited,adj,flag,recur_list);
+    parent_or_not[current_positionon_path]=true;//marking currnt parent u
+    vector<int> current_neighbours_arr=adj[current_positionon_path];
+    int n_size=current_neighbours_arr.size();//number of neighbouring vertices
+    for(int j=0;j<n_size;j++){
+      int current_neighbour=current_neighbours_arr[j];
+       if(!visited[current_neighbour]){
+	          flag=explore(current_neighbour,visited,adj,flag,parent_or_not);
        }
-       else if(recur_list[adj[current_positionon_path][j]]){
+       else if(parent_or_not[current_neighbour]){//if descendent v is parent u
 	          flag=1;
             std::cout<<"Cycle present\n";
             return flag;//stop exploring when cycle found
        }
        if(flag) return flag;
     }//All vertices reachable from this current vertice are explored and no cycle detected,
-     //so we can write false/0 for the recur_list of current vertice and backtrack i.e,
-    recur_list[current_positionon_path]=0;//return back to calling explore function
-    return flag;
+     //so we can write false/0 for the parent_or_not of current vertice and backtrack i.e,
+                                          //backtracking from currnt u, its no longer a parent
+    parent_or_not[current_positionon_path]=0;//so mark it 0/false
+    return flag;//return back to calling explore function
 }
 
 int acyclic(vector<vector<int> > &adj) {
   int flag=0;
-  //vector<int> recur_list(adj.size(),0);
-  map<int,bool> recur_list;
+  //vector<int> parent_or_not(adj.size(),0);
+  map<int,bool> parent_or_not;
   vector<int> visited(adj.size(),0);
-  //return explore(0,recur_list,visited,adj);
+  //return explore(0,parent_or_not,visited,adj);
   for(int i = 0; i < adj.size(); i++){
      if(!visited[i]){
-	      recur_list.clear();
-	      explore(i,visited,adj,flag,recur_list);
+	      parent_or_not.clear();
+	      explore(i,visited,adj,flag,parent_or_not);
       }
       if(flag==1){
         return flag;
