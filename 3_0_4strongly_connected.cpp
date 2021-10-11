@@ -23,7 +23,7 @@ void dfs2(int current,vector<vector<int> > &transpose,vector<bool> &visited){
 	}
 }
 
-int number_of_SCCs(vector<vector<int> > adj) {
+int number_of_SCCs(vector<vector<int> > adj) {//Kosaraju SCCs
      int result = 0;
      //write your code here
      vector<bool> visited(adj.size());
