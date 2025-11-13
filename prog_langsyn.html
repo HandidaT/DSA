@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>lang_syntax</title>
+<link rel="stylesheet" type="text/css" href="prog_langsyn.css"><!--link to external style sheet-->
+</head>
+<body>
+<table>
+  <caption>Progsyntax table</caption>
+  <tr>
+    <th>c</th><th>c++</th><th>java</th><th>python</th><th>javascript</th><th>rust</th><th>go</th><th>solidity</th><th>linux</th><th>php</th><th>bootstrap</th><th>sql</th><th>git</th><th>Eng/m</th><th>res</th><th>pendng</th><!--Table column headers-->
+  </tr>
+
+  <tr>
+    <td></td><td></td><td></td><td></td><td>Everything in js(similar to c and maybe other languages as well) happens inside an execution context(stack memory), which is created when js program file runs. This context is like a container and it has two components, which are executed separately in two phases, 1)Memory/variable environment-where all funcs and vars are stored as key-value pairs. During execution phase, each var is assigned undefined(keyword maybe like NULL) at beginning. 2)Code/thread of execution-Where code is executed a line at a time. During code execution phase vars are assigned values given by coder(static)/logic. Each func creates sub-context with memory and code((assigns args,vars,return value...)) components and phases. Context/stack(stack ds) maintains order of execution of contexts. | JS is synchronous single-threaded language(but, in contrast, AJAX is asychronous js).</br>Hoisting: Because during execution of memory phase vars/func are allocated memory and assigned undefined/func-body as value, in code phase when vars are accessed/printed before their initialization statement, they are/output undefined, unlike other languages which throw error if this is done. | Even though an empty js file runs, lots of things run behind the scenes along with creating global execution context. One of it is, global window object and "this" gets created. Window object is "this" keyword at global level i.e, if varname is initialized in js file, console.log(window.varname), console.log(this.varname),console.log(varname) prints same thing.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>cc or gcc to compile to a.out<br/>
+$cc file.c or $gcc file.c<br/>
+$./a.out //to execute  </td><td>Architecture</td><td>$javac //for compilation</td><td>python file.py or python3.x file.py</td><td></td><td></td><td></td><td></td><td>https://superuser.com/questions/318555/where-are-man-pages-stored-in-ubuntu | use man pages for learning</td><td></td><td></td><td></td><td></td><td>Explaini Algo/code, introduction | Math,sci(crypto,med,funeral,all),
+Two, group, stage(informal/formal)
+Wild taming tactics
+Greetings(how to, names, intro/introducing guests), welfare enquiry(acquaintances), jokes, compliments, amicable, inquiry, story/explain/answer, debate/bargain/asshole, awkward,instant 1-5 min,
+common ground, compliment,jokes
+Goodbyes (how to(room,distant))
+Hi, welcome</td><td>online education site like coursera,robo</br>Chat bot</td><td>(centos,graph algo,github wiki,pdf,js),dwnlod everythng for independence,Internship, nptel:Networking/java exam, math,os,Integrated Photonics Devices and Circuits
+|vaccine|linkin/insta/twitter/fb/yt_vid/telegram post per day|passwrds|gate prev papers practice|leetcode|kaggle|AWS|redhat|android|nginx|aadhar|house|business|established job (fang company/cadence/qlabs..)|govjob|stocks|crypto|microbiome|shell|undergabsorbernuks| combine cu_resume_registrtions n dataoverviewnodes</td>
+  </tr>
+
+
+  <tr>
+    <td></td><td>Architecture</td><td>Patterson</td><td>Int is sequence of binary number<br/>Float broken into mantissa n exp</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>provisioning:provide,make ready to provide(like fill the godown with goods to sell);Leverage:use (something) to maximum advantage/returns(use of credit or borrowed capital to increase the earning potential of shares).</td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>var1="World";printf(“Hello %s”,var1);</td><td></td><td></td><td>print(“Hello world”) //will output on console | print(r"hello")</td><td>console.log("Hello world");console.log(funcname);//will print func body(hoisting works here)</td><td></td><td></td><td></td><td></td><td>echo “Hello world”; //will output on<br/> the screen. Php is not case<br/> sensitive for inbuilt functions.<br/> Echo is valid.</td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>Think of variables as containers for storing data.
+Declaration says "this thing exists somewhere":
+
+dynamically-typed if the type of a variable is checked during run-time. Common examples of dynamically-typed languages includes JavaScript, Objective-C, PHP, Python, Ruby, Lisp, and Tcl.</td><td></td><td></td><td>There is no variable declaration in Python! Just intialization. You just assign a value to a variable and it comes into existence.   value of variable can change during program execution and the type as well. This means that there can't be no type declaration for variables.</td><td></td><td></td><td></td><td></td><td></td><td>variables are prefixed by $. No var tyoe declaration in php. Ex: $varname   |   Type Checking may occur either at compile-time (a static check) or at run-time (dynamic check). If a language specification requires its typing rules strongly (i.e., more or less allowing only those automatic type conversions that do not lose information), one can refer to the process as Strongly typed, if not, as Weakly typed. language is statically-typed if the type of a variable is known at compile-time instead of at run-time. Common examples of statically-typed languages include Java, C, C++, FORTRAN, Pascal and Scala. </td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>// single line comment
+/* */ multi line comment</td><td>// single line comment
+/* */ multi line comment</td><td>// single line comment
+/* */ multi line comment</td><td># single line comment
+‘’’ ‘’’ multi line comment</td><td>// single line comment
+/* */ multi line comment</td><td></td><td></td><td></td><td></td><td>// single line comment
+/* */ multi line comment</td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>auto: This is the default storage class for all the variables declared inside a function or a block. Hence, the keyword auto is rarely used while writing programs. Extern: storage class simply tells us that the variable is defined elsewhere and not within the same block where it is used. main purpose of using extern variables is that they can be accessed between two different files which are part of a large program. Static: variables have a property of preserving their value even after they are out of their scope! we can say that they are initialized only once and exist till the termination of the program. Their scope is local to the function to which they were defined (default value 0). Register: Storage class declares register variables which have the same functionality as that of the auto variables. The only difference is that the compiler tries to store these variables in the register of the microprocessor if a free register is available.</td><td>storage class register n static same as in c. auto: keyword provides type inference capabilities, using which automatic deduction of the data type of an expression in a programming language can be done.. extern "C"{} says "don't mangle C function names". C++ is built on-top of C, and furthermore it's an object-oriented programming language built from a procedural programming language, and for that reason there are C++ expressions like extern "C" which provide backwards compatibility with C. C++ compiler implicitly renames (mangles) functions based on their parameters. In C, this feature was not supported. define mangling?</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td>logical operator &&,||,xor,</td><td><arithmetic operators +,-,*,/.   | Assignment oprtrs  =,+=, -=, *=,/=.  | comparision op which return boolean ==,!=,>=,<=. | increment/decre operatrs  ++,--. ++var incre before execution of expression.,  Var++ incremented after execution. </td><td></td><td></td><td></td><td></td><td></td><td></td><td>var_dump(a==b)vLogical operators and, or,xor,|</td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>preprocessor definition(is a text editing stage where we control what code gets fed into compiler)? preprocessing directive of the form #include &ltlibraryname.h&gt. | #include "libraryname.h" causes the replacement of that directive by the entire contents of the source file identified by the specified sequence between the " delimiters. file is searched for in an implementation-defined manner. If this search is not supported, or if the search fails, the directive is reprocessed as if it read #include &ltlibraryname.h&gt | preprocessor macro is #define...</td><td></td><td>Import  java.util.Scanner;
+Scanner s=new Scanner(System.in);</td><td>Import  libname #or from libname import func/*(for all)  | #Fr usr inp v=input(“Enter input: ”)
+print(end=”\n”, sep=”_”) | “v={e:6.2f}”.format(e=47.523)# “v= 47.52”</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>br for new line</td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>Strings are group of characters. To store string in char arr, arr len must be >= len of characters+1. It is designed/defined that +1 space is for null termination/character to say that its the end of string in case arr is larger than (string len+1) ex: c[0]="J";c[1]="O";c[2]="H"; c[3]="N";c[4]="\0";c[5]=garbage value. Null character has ascii value zero. strlen() in &ltstring.h&gt returns len excluding null and garbage value if arr is > than needed(if sizeof() is used exclusion is not done.). string literals are group of chars b/t "". Null termntn for string literals is implicit. char *c="hello"; if initialized like this string literals gets stored as compile time constant probably in text segment. If string is initialized as comma separated list null termination is not implicit char c[8]={"J","O","H","N","\0"};//size should be >=5. char c1[6]="hello";char* c2; valid{c2=c1,print c2[2],c2[0]="A",c2[i] is *(c2+i), c1[i] is (c1+i)}; invalid{c1=c2,c1=c1+1,c2++}. if we don't want func to modify str arg, pass it as const void foo(const char *c)</td><td></td><td></td><td>Text processing is widespread prepping docs, searching google. No char in python. char=str of len 1. str can enclose even in ‘’’ ‘’’ for multiple line str. s=”hello” t=”there”  s+t # “hellothere” | negative index to start from back.| len(var) #returns size
+Str slice: s=”hello”| s[1:4] #returns “ell”  |  Strs in py r immutable s[3]=”p” #error ie, str element assgnmnt n inplace change isn’t possible, Insted create new s1=s[0:3]+”p” #help  s.rstrip() # removs trailing whitespace
+s.lstrip() # removs leading whitespace
+s.strip()#remvs ldg n trlng whitespace
+s.find(pattern)#returns position, -1 els
+s.index(pattern)#ret poston, err else
+s.replace(“pattern”,”with”)| s.split(“,”,n)
+“,”.join(listofstrings)| s.capitalize()| s.lower()| s.upper()| s.swapcase() | s.center(50,”-”),s.ljust(50,”-”), s.rjust(50,”-”)</td><td></td><td></td><td></td><td></td><td></td><td>$s=”string”;  $lenn=strlen($s); //returns len  | echo “This is ”.$s; // This is string  | . for concatenation.
+str_word_count($s); //return 1 | no of words in string  |  strrev($s); str reverse.  |  strpos($s,”r”); // rets position of 1st r.| str_replace(“t”,”d”,$s); //to replace</td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>Pointer Arithmetic: Pointer variables are strongly typed(type declaration necessary) and we can't have/(do much with) generic type pointers as we dereference these addresses to access, modify values in them and also as data types have different sizes(int 4bytes,char 1byte,float 4bytes). Pointer var will always store add of 1st byte. When dereferenced, type info will determine how many bytes to look for after add in pointer var. So typecasting will change the how many bytes to look for when dereferenced. Ex: int *p1;//for declaration, p1=&add//assign add,printf("%d %d",*p1,sizeof(int));//for dereference,p1+1 for accessing next add after add(after 4 bytes if int),p1-1 for previous add(printf("%d %d",p1+1,*(p1+1));). void pointer is generic pointer type for storing add, but dereferencing or ptr arithmetic(p1+1...) on void pointer causes error as its not mapped to any data type(can only print add of void ptr), so typecasting is required to store values and derefrnc.</br> int pointer  to pointer int **ptr;. Its better to enclose ptrs in parenthesis *(*ptr) to avoid error, especially for array ptrs its necessary. If args to funcs are not ptrs, var value is copied(call by value) and operations on copied var will not reflect in original var, so to reflect(call by reference will save mem as var is not copied), ptr must be passed as arg. *p=(*p)+1;. Array is block of consecutive adds storing values(integers/chars). int a[5];int *p;p=&a[0]//== a;//var 'a' stores add of 1st element(base of arr). a+1 gives 2nd add. *(a+1) gives 2nd val. increment can be done on arr ptr after assigning array to ptr(a++ throws error). arr always passed as reference params to funcs. Compiler know arr as arr in block its initialized, but when arr is passed as arg to func compiler passes ptr/add(cbreference) of 1st element of arr to save space(which is used when copied), so arr size is not known(inside func sizeof(arr) will return size of add/ptr or single value). For func arg (int a[] or int* a) is same. int b[2][3]; b is ptr/add to 1st sub arr. int *p=b;//gives error as b returns ptr to 1d arr of 3 integers. int (*p)[3]=b;//is right. b==&b[0],*b==b[0], , b+1==&b[1],*(b+1)==b[1],*(b+1)+2==b[1]+2==&b[1][2], *(*b+1), b[i][j]==*(b[i]+j)==*(*(b+i)+j). int c3[][2][2]; int (*p)[2][2]; is right,*c==c[0]==&c[0][0], *(c[0][1]+1)==c[0][1][1],*(c[1]+1)==c[1][1]==&c[1][1][0], c[i][j][k]==*(c[i][j]+k)==*(*(c[i]+j)+k)==*(*(*(c+i)+j)+k).</td><td></td><td></td><td>Lst is squnce of non uniform elements (diff type elemnts can be). Indexing n slicing like on str. Lst retrns value fr single position l[1] unlike str s[0] which again returns a str, single elmnt  slice alwys retrns list l[:1] | unlike strs, lsts can be updated in place. When mutable types are assigned to vars they r copied by refernce. L1=[1,2,3]>>L2=L1# r same ref. L2=L1[:] to copy rather than referenc. X == y for copy eqality, x is y for reference equlity. L1=[1,2,3]
+L2=L1+[9] # concatenation cretes new list. So L1 is L2 # fals| Lst.append(val) appends to same list. extend(lst) takes lst and adds elmnts to same lst. remove(val) remve 1st occrance elmnt, if not presnt error. Arrys r contiguous blocks/word of same type elemnts, unlike lsts that are scatters blocks(like linked lists). Binary search is not as efficient when done with py lists. In python 2 range return list, but in py 3 range isn’t list, it produces sequence of numbers that can be iterated. list(range(0,5)) gives list. Mor on lst: assign thrugh slice is same lst. L=[1,2]>>L[1:]=[7,9] is [1,7,9]. lst.reverse(), lst.sort(), l.index(x), 
+List to str: ‘delimeter’.join(lst). Str to lst: lst.split(‘delimeter’). Unlike lsts tuples () r immutable so can’t modify. Sets {} r optimized to membership test. Sets r unordered n used for set operations(union,intesrsction,diffrnc). frozenset? lst=[[1,2],[3,4,5]]
+print(sum(lst,[]))</td><td></td><td></td><td></td><td></td><td></td><td>$array_name= array(‘c’,’c++’,’py’);| Associative arrays are arrays that use named keys that you assign to them. $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43"); | foreach($age as $x => $x_value) {echo "Key=" . $x . ", Value=" . $x_value;}</td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>int *add(int *arg1){...return &var};//to make func return pointer. Since funcs are allocated on stack mem, vars in func only exist till func returns. So, if u want func to return ptr, that ptr should exist even after func returns. Thats possible if you pass concered ptr as arg to func and return it or create heap mem in func using malloc and return that.</br>Function Pointers: Stores add/entry point of func block. ex:int (*p)(int, int);//if no parenthesis *p(int,int) then its func returning func ptr.   p=& funcname or p=funcname; int c=(*p)(2,3) or p(2,3);. Func ptrs can be passed as args to other functions.</td><td></td><td></td><td>def funcname():   | Giving Func agrs is equalent to assgnmnt, i.e, immutable will be copied, mutables will be referenced. If lst is passed as arg, whatever happens to lst inside func will be reflect outside. Py funcs args can be calld in any ordr explctly func(a,b,c=0) >>func(b=2,a=5) default args must be last. Inbuilt func int() has 2nd default val 10 for base, change to 16 for hex. Default vals must be there at definition time, qicksort(arr,len(arr)) wont’t work. Func names can be assingd to other vars which is useful in passng func as arg to othr func. Py allows nested funcs.</td><td>function funcname(){...} | var funcname=()=>{...}//for arrow func var is being assigned func. In hoisting, arrow func will be assigned undefined rather than func body. | var funcname=function(){...}//even this func syntax like arrow func will be assigned undefined in memory execution phase.</td><td></td><td></td><td></td><td></td><td>function funcname(){}</td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>map(func,list) aplly func on list returns obj of iterables, in other words iterates over all the elements in given sequence. While iterating the sequence it calls the given callback() function on each element and then stores the returned value in a new sequence. In the end return this new sequence of transformed elements. | filter(func,list) apllies condition func on lst and return only those that are true as obj of iterable.
+List comprehension returns list, it simulates set builder form [map | generator, filter]</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>type(var) #Check type. var type decided by what value is assigned</td><td></td><td></td><td></td><td></td><td></td><td>var_dump(var)//returns information about a variable like type n value, len in case of string //type(val)</td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>/ always creates float, to get int use //</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td> Dict {} is mutable sequence of key value pairs. Keys can to be any immutable element unlike lsts which cn b viewed as mapping from positions to values (lst[0]->value)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>break continue | else could be used with while or for loops, here esle would execute if loops terminated normally i.e, break statments isn’t executed inside loop</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>try: except err_name:except: else:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>list(zip([2,3],[4,5]))>> [(2,4),(3,5)]
+ return iterable with subiterables containing merged elements of same index values frm both iterables.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>Before it can be read or written, a file has to be opened by the library function fopen. and returns a pointer to be used in subsequent reads or writes of the file. If prefixed by f they deals with files, else with stdin/stdout(or are system calls). fscanf() reads text data from text file while fprintf() writes (fscanf (stdin, "% d", & a, & B ); It is equivalent: scanf ("% d", & a, & B );, fprintf (stdout, "% d", x, y ); It is equivalent: printf ("% d", x, y );). fread() reads binary data from binary file while fwrite() writes. Family read() -> open, close, read, write(system calls,unbuffered).  | Family fread() -> fopen, fclose, fread, fwrite(standard c library funcs, buffered). Calling fread() is mainly used for binary file data where struct data are stored. There are 3 buffers. The harddrive has one, /dev/hda is buffered too and fread. you can flush the third one using "fflush", the second one using fsync. i don't know of a way to flush the harddrive buffer. fflush() only really applies to fwrite(), which has the same relation to write() that fread() has to read().  | getw, putw - input and output of words (ints), Use of fread/fwrite is recommended than getw/putw. fputc() writes the character c, cast to an unsigned char, to stream. fputs() writes the string s to stream, without its terminating null byte "\0". putc() is equivalent to fputc() except that it may be implemented as a macro which evaluates stream more than once. fgetc behaves like getc, but is a genuine function, not a macro; it may therefore be used as an argument. fgetc runs more slowly than getc, but takes less space per invocation. putchar(c); is equivalent to putc(c,stdout). puts() writes the string s and a trailing newline to stdout. fgetc() reads the next character from stream and returns it as an unsigned char cast to an int, or EOF on end of file or error. getc() is equivalent to fgetc() except that it may be implemented as a macro which evaluates stream more than once. difference between getc() and getchar() is getc() can read from any input stream, but getchar() reads from standard input. So getchar() is equivalent to getc(stdin). gets() reads a line from stdin into the buffer pointed to by s until either a terminating newline or EOF, which it replaces with a null byte "\0". No check for buffer overrun is performed (see BUGS below). fgets function is used to read strings from files. The fgets function is called as follows: fgets (str, n, fp ); Here, fp is the file pointer, str is the starting address for storing strings, and n is an int variable. The function reads n-1 characters from the file indicated by fp. Reading stops after an EOF or a newline	. If a newline is read, it is stored into the buffer. A terminating null byte "\0" is stored after the last character in the buffer. ungetc() pushes c back to stream, cast to unsigned char, where it is available for subsequent read operations. Pushed-back characters will be returned in reverse order; only one pushback is guaranteed.</td><td></td><td></td><td>f=open(‘path/to/file’, ‘r’) # 2nd arg default is ‘r’. All modes are r, w, a. Need to f.close() explicitly. When opened with context manager >> with open(‘path/to/file’, ‘r’) as f: # it’ll close by itself. f.mode return mode. f.read() # reads/returns evrythng. f.readlines() #returns lines in list. f.readline() # returns current line and moves pointer to nxt line. f is buffer with entire file so can be looped instead too.f.read(n) # where n in no of char to read. f.write to write file when in w mode. Mode ‘wb’ to read jpg.</td><td></td><td></td><td></td><td></td><td>cat, which concatenates a set of named files onto the standard output. cat is used for printing files on the screen, and as a general-purpose input collector for programs that do not have the capability of accessing files by name. $cat x.c y.c</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td></td><td>git clone https://github.com/mozilla/pdf.js.git//installation</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>Dynamic memory(mem from heap) allocation is a process of allocating memory at run time. routines are defined in the header file called stdlib.h. void *realloc(void *ptr, size_t size) attempts to resize the memory block pointed to by ptr that was previously allocated with a call to malloc or calloc (size is new memory block size). size_t is unsigned int as mem can't be negative. malloc allocates an uninitialized array with the given number of bytes and returns void pointer. void* var = malloc(size);. calloc(no of elements,size_t data_type size) returns memory that is pre-initialized to be all-zeros which seems equivalent to calling malloc and then calling memset to fill the memory with zeros. So basically, calloc exists because it lets the memory allocator and kernel engage in a sneaky conspiracy to make your code faster and use less memory. You should let it! Don't use malloc+memset! https://vorpus.org/blog/why-does-calloc-exist/ | malloc casting:int *sieve = malloc(sizeof *sieve * length); instead of int *sieve = (int *) malloc(sizeof(int) * length);.
+... free(var)</td><td>int *var=new int[size];, delete[] var;. new n delete are type safe... </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td>listofstrings</td><td>pass #does nothing| del(l[4]) #removes indx 4 n lst contracts. x=None#intiaze wth nothng. Ex:If x is not None: do somthng</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>Py names are looked up inside-out from within functions. without passing as func args, can update global names with mutable values, unlike immutables.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td>class Classnam{} //declared by class keyword
+Classnam obj=new Classnam();//object declar
+dot operator(.) links name of object with name of an instance variable/class member. The this keyword refers to object  that invoked it| this() will call default constructor of class.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>SDL:SDL is an abstraction layer above OpenGL. You are still able to access OpenGL in your application and therefore use it's full power. |sudo apt-get install libsdl2-dev //compiler linker command -lSDL2main -lSDL2 | sudo apt-get install libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev | On linux, simply change #include <SDL.h>  to #include <SDL2/SDL.h>  fixed it, of course on compiling need -lSDL2 flag</td><td>qt</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>nullptr vs NULL</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>Zlib check 2_9_2zpipe.c to learn
+Zlib deflate or/& inflate work like encode/decode in libav.</td><td></td><td></td><td>gzib</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>Pandas is python package designed to easily work with relational n labelled data. Pandas is used work with Tabular data, Ordered/Unordered data, Matrix datasets. Two primary data structures of pandas, Series(single column of dataframe, 1-dimensional) and DataFrame (2-dimensional). DataFrame is a container for Series(verify that col is series by checking the type of the output >>type(titanic["Age"])#Out[6]: pandas.core.series.Series), and Series is a container for scalars. Size mutability: columns can be inserted and deleted from DataFrame and higher dimensional objects. All pandas data structures are value-mutable (the values they contain can be altered) but not always size-mutable. The length of a Series cannot be changed. axes are considered more or less equivalent (except when C- or Fortran-contiguousness matters for performance). When using a Python dictionary of lists, the dictionary keys will be used as column headers and the values in each list as columns of the DataFrame. selection of a single column is very similar to selection of dictionary values based on the key. df["Age"].max()#returns max value of column "Age". Max value of series ages.max(). Getting data in to pandas from many diff file formats/sources is supported by read_* functions. Exporting data out of pandas is provided by different to_*methods. The head/tail/info methods and the dtypes attribute are convenient for a first check. DataFrame.shape is an attribute returns no of rows n cols. To select/filter rows based on a conditional expression(>, but also ==, !=, <, <=,… would work, the output is actually a pandas Series of boolean values(True or False) with same no of rows as the original DataFrame. Only rows for which the value is True will be selected.), use a condition inside the selection brackets [] >>above_35 = titanic[titanic["Age"] > 35]. Similar to the conditional expression, the isin() conditional function returns a True for each row the values are in >>class_23 = titanic[titanic["Pclass"].isin([2, 3])]. When combining multiple conditions, conditions must surround by () and use | & operators, not or/and. notna() conditional function returns a True for each row the values are not an Null value. To select specific rows and columns from a DataFrame subset of both rows and columns is made in one go and just using selection brackets [] is not sufficient anymore. The loc/iloc operators are required in front of the selection brackets []. When using loc(When using the column names, row labels or a condition expression>>adult_names = titanic.loc[titanic["Age"] > 35, "Name"]))/iloc(based on their position index in the table >>titanic.iloc[9:25, 2:5]), the part before the comma is the rows you want, and the part after the comma is the columns you want to select. With loc or iloc, new values can be assigned to the selected data(>>titanic.iloc[0:3, 3] = "anonymous"). group by. merging and joining,reshaping and pivoting data sets. </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>matplotlib</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>numpy</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>For installing opencv $pip install opencv-python        //learn pip vs conda</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>if(a == b){
+}
+else if(b == c){
+}
+Else{}
+Keyword or is like exit n die(“statement”); is alias to exit() which Print a message and exit the current script</td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>while(condition){}
+do{} while(condition)//run once even if condition false.
+For(var;condition ;incre/decre){}
+foreach($array as $elemnt){}</td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>Django, as a framework, follows MVC (loosely). Django is a framework, not a language. Python is the language in which Django is written. Its is suitable for both frontend and backend. Pip instal django   |  python -m django --version   |  $django-admin startproject projectname  //creates new project folder automaticly  |$python manage.py runserver //to start server | $python manage.py startapp appname //creates blog/app inside project  | In appname/views.py we create routes/functions i.e, diff pages in our webapp. In each route/function we return HttpResponse() method with code(html..) as argument to it. From django.http import HttpResponse to use HttpResponse() method. But instead of passing code as argument we pass path to code-template file. Django by default looks for templates sub-directory in diff application’s folder so create template/appname(appname folder again in it to avoid namespace collisns) folder in appname folder. Inside template/appname/ create templates. For django to search for templates, have to add path to Appnameconfig(name of class in apps.py created in projname/appname folder, path start frm inside template dir)to INSTALLED_APPS list var in projname/projname/settings.py file. In views.py we can even return rendered template using django.shortcuts.render method instead of passing rendered template to httpresponse.</br>Whatever(dicts) we pass as 3rd arg of render() will be available in template. In template we access those 3rd arg n also write modified py. We can used . operator instead of .get() to access dict values. Templating engine allows py block opening statements(if...:, for...:, etc) embedded in {% py %}, but have tobe closed with close statements({% endfor/endif %}) and inner block statements enclosed in {{py}}. View source displays html n output of django, but django code is hidden. Templates may share similar code, thus we create one template from which others can inherit code using template inheritance concept to reduce redundant code. Child templates can override {%block content%}{%endblock%}.In django static files like css/javascript need to located in static directory within app and to load static files use {%load static%}. To access admin page of django site navigate to localhost:8000/admin. 1st time we have to create database if haven't already created using few migration commands $python manage.py makemigrations (creates default db and tables like auth_user table, detects changes n prepares django to update db) $python manage.py migrate (applies changes to database) then, create user using $python manage.py createsuperuser (temp1,temp1@gmail.com,temp1pass). Django comes with awesome admin site by default which saves lot of our time, which is a gui of site details. Django has its own ORM.ORMs provide a high-level abstraction upon a relational database that allows a developer to write Python code instead of SQL. ORM represents db structures as classes(aka models/db tables). Makes it easier to switch b/t database. Create model classes in app/models.py file n run makemigrations command to detect changes n create newmodel/table file in app/migrations. To see sql code that migrate makes for created model/post $python manage.py sqlmigrate app migrationnumber(0001). run migrate command to apply changes. $python manage.py shell //opens py django shell.</td><td></td><td></td><td></td><td></td><td></td><td>We can write html in php file. In between html we can include php. Php opening and closing tags are <?php  ?> | When we view source of php page created, it will  show html code and only output of php code instead of php code. So whats in php code like paths, logic,etc will be hidden from public. Php is server-side scripting language. It is for backend. Php can be written in multiple diff places in file with php tags.</td><td>Just add snippets and components from https://getbootstrap.com/docs/5.0/getting-started/introduction/</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>Fnda</td><td></td><td></td><td></td><td></td><td></td><td>PHP doesn’t support multiple inheritance but by using Interfaces in PHP or using Traits in PHP instead of classes, we can implement it.</td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>const prefix before var//const pi=3.14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>define(‘PI’, 3.14); //declaring constants </td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>ddddddddddddddddddddddddddd</td><td></td><td></td><td></td><td></td><td>For custom prompt statement $export PS1='\u@\h: '</br>You can attach that to the end of your ~/.bashrc file to have it persist between logins. Can trim using py script as well. https://askubuntu.com/questions/16728/hide-current-working-directory-in-terminal</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td>Fnda</td><td></td><td></td><td></td><td></td><td></td><td>PDO refers to PHP Data Object. lightweight and consistent interface for accessing a database in PHP. focuses on data access abstraction rather than database abstraction--regardless of which database we are using, we have to use the same functions. PDO extension can access any database which is written for PDO driver unlike mysql_i which is mysql specific. ex:$dbConn= new PDO("mysql:host=$dbHost;dbname=$dbName",$dbUser,$dbPassword); PDO n mysql_i support Prepared Statements. Prepared Statements protect from SQL injection, and are very important for web application security. Prepared statement is SQL statement template. execute the similar SQL statements repeatedly with high efficiency. database parses, compiles, and performs query optimization on the SQL statement template, and stores the result without executing it. Execute once the appli binds values to paramenters. JSP is a server-side programming technology, whereas PHP is a server-side scripting language.</td><td></td><td>SELECT * FROM table_name; SELECT col1, col2 FROM table2; //SELECT statement is used to select data from a database. The data returned is stored in a result table, called the result-set. | SELECT DISTINCT column1, column2, ... FROM table_name;//SELECT DISTINCT statement is used to return only distinct (different) values. | SELECT column1, column2, ... FROM table_name WHERE condition; //WHERE clause is used to filter records that fulfill a specified condition. </br>First Normal Form: Unique col names, All rows in each col will be atomic(if not row is duplicated to expand the non atomic row value). Each col will contain same type values.</td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td></td><td>pdf.js  | for dark mode change "this.ctx.save();
+      this.ctx.fillStyle = background || "rgb(255, 255, 255)";
+      this.ctx.fillRect(0, 0, width, height);" to  "this.ctx.save();
+      this.ctx.fillStyle = background || "rgb(0, 0, 0)";
+      this.ctx.fillRect(0, 0, width, height);" and     "setFillRGBColor: function CanvasGraphics_setFillRGBColor(r, g, b) {
+        const color = _util.Util.makeHexColor(r, g, b);" to     "setFillRGBColor: function CanvasGraphics_setFillRGBColor(r, g, b) {
+          const color = _util.Util.makeHexColor(255, 255, 255);" in build/pdf.js  "https://stackoverflow.com/questions/27713660/pdf-js-get-the-text-colour"</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td><canvas id="the-canvas1" style="border: 1px solid blue; direction: ltr;"></canvas>
+</td><td></td><td></td><td>numpy</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+</table>
+<script src="javascript/build/pdf.js"></script>
+
+<script id="script">
+  //
+  // If absolute URL from the remote server is provided, configure the CORS
+  // header on that server.
+  //
+  var url = 'books/morgan.pdf';
+
+  //
+  // The workerSrc property shall be specified.
+  //
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'javascript/build/pdf.worker.js';
+
+  //
+  // Asynchronous download PDF
+  //
+  var loadingTask = pdfjsLib.getDocument(url);
+  loadingTask.promise.then(function(pdf) {
+    //
+    // Fetch the first page
+    //
+    var page_num = 200;
+    pdf.getPage(page_num).then(function(page) {
+      var scale = 1   ;
+      var viewport = page.getViewport({ scale: scale, });
+
+      //
+      // Prepare canvas using PDF page dimensions
+      //
+      var canvas = document.getElementById('the-canvas1');
+      var context = canvas.getContext('2d');
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      var canvasOffset = $(canvas).offset();
+        var $textLayerDiv = $('#text-layer').css({
+            height : viewport.height+'px',
+            width : viewport.width+'px',
+            top : canvasOffset.top,
+            left : canvasOffset.left
+        });
+      //
+      // Render PDF page into canvas context
+      //
+      var renderContext = {
+        canvasContext: context,
+        viewport: viewport,
+      };
+      page.render(renderContext);
+
+      page.getTextContent().then(function(textContent){
+           console.log( textContent );
+            var textLayer = new TextLayerBuilder({
+                textLayerDiv : $textLayerDiv.get(0),
+                pageIndex : page_num - 1,
+                viewport : viewport
+            });
+
+            textLayer.setTextContent(textContent);
+            textLayer.render();
+          });
+    });
+  });
+</script>
+</body>
+</html>

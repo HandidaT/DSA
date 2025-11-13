@@ -1,0 +1,119 @@
+table{
+ border-collapse: collapse;/*to remove double borders*/
+ width: 100%;
+ color:#999;
+ background: #000;
+}
+
+th{
+ border: 1px solid #999;
+ scroll;
+}
+td{
+ border: 1px solid #999;
+ font-size:60%;
+}
+
+tr:hover{/*hover is a pseudo class fyi*/
+ color:#fff;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  line-height: 100px;
+  border-radius: 60%;
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  background: #000
+}
+/*
+td:hover{hover is a pseudo class fyi
+  transform: scale(1.2);
+ background: #000;
+}
+*/
+/*
+tr:nth-child(2n){
+  background:#ccc;
+}
+
+thead{
+  background: #000;
+  color: #fff;
+}
+
+tbody{
+  background: #000;
+  color: #fff;
+}
+*/
+p{/*p is paragraph selector. Assigning color property to red...*/
+color:red;/*you can use rgb color or css color picker. google css color picker and choose*/
+/*color:rgba(242,50,73,5);*/
+font-size:10%;
+/*font:bold 36px helvetica;/*short cut order*/
+border: 4px dashed green;/**/
+padding: 20px ;
+margin: 50px ;
+/*design shortcut top right bottom left*/
+/*to design border sides seperately
+border-top:;
+border-right:;
+border-left:;
+border-bottome:;
+padding-top:;....
+background-color:white;
+*/
+}
+
+div p{
+color: yellow;
+font-size:80%;/*we can also select using class's or id's,etc child*/
+}
+
+/*
+div.classname p{
+Only paras inside divs with classname.
+}
+*/
+
+body{
+/*background-image: url("node2.jpg");
+color:white;
+/*
+background-size:250px 300px;
+background-repeat:no-repeat; //repeat-x, repeat-y
+background-size:cover; //this makes background img as big as the browser*/
+background:black;
+/*background: url("node2.jpg") center no-repeat scroll;/*this is background shorthandd property*/
+order is 
+background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;*/
+}
+
+div{/*div here is used as div selector.*/
+border:1px solid red;
+/*width:40px;
+height:60px;
+display: inline; #this makes block level elements inline, although there really isn't any need to if you just use the right element to start off with.*/
+}
+
+span{/*span here is used as span selector.*/
+border: 1px solid green;
+/*display: block; #this makes inline elements as block lvl elmnts.*/
+}
+
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}
+
+#blue{
+  color: blue;
+}
+
+

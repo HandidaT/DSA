@@ -5,6 +5,7 @@
 using std::vector;
 using std::pair;
 
+
 void dfs1(int current,vector<vector<int> > &adj,vector<bool> &visited,vector<int> &order){
 	visited[current]=true;
 	for(size_t i=0;i<adj[current].size();i++){
@@ -13,15 +14,16 @@ void dfs1(int current,vector<vector<int> > &adj,vector<bool> &visited,vector<int
  	 	}
 	}
 	order.push_back(current);
-	}
+}
 	
 void dfs2(int current,vector<vector<int> > &transpose,vector<bool> &visited){
 	visited[current]=true;
 	for(size_t i=0;i<transpose[current].size();i++){
 	  if(!visited[transpose[current][i]])
-	  dfs2(transpose[current][i],transpose,visited);
+	  	dfs2(transpose[current][i],transpose,visited);
 	}
 }
+
 
 int number_of_SCCs(vector<vector<int> > adj) {//Kosaraju SCCs
      int result = 0;
@@ -68,4 +70,25 @@ int main() {
       for(int k=0;k<adj.size();k++)
    	std::cout<<adj[j][k]<<"\n";
    }*/
+   
+/*
+/home/han/Desktop/dnet/compsci/3DAA/crsra/ZbXGTnQSSm61xk50EvpuTw_b5653e5869ef44c680fb84b29011bd72_course3_2020_07_27/week2_graph_decomposition2/3_intersection_reachability
+
+4 4
+1 2
+4 1
+2 3
+3 1
+should output 2
+
+5 7
+2 1
+3 2
+3 1
+4 3
+4 1
+5 2
+5 3
+should output 5
+*/
 }

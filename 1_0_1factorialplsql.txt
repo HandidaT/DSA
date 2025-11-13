@@ -1,0 +1,22 @@
+--Factorial of a number
+
+declare
+num1 integer;
+counter integer;
+
+begin
+num1 := 5;--Enter number
+IF TRUE THEN
+  dbms_output.put_line(num1);
+END IF;
+
+counter:=num1;
+
+LOOP
+      num1 := num1 - counter ;
+      dbms_output.put_line(num1);
+      counter := counter -1;
+      EXIT WHEN (counter < 1);
+END LOOP;
+dbms_output.put_line(num1);
+end;

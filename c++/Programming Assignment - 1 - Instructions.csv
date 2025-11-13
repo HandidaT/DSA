@@ -1,0 +1,8 @@
+,
+Task-0,Download the next sheet 'NZ5_flightdatar' as a CSV file onto your laptop/PC
+Task-1,Write a program to open the file and read the CSV file
+Task-2,Create a class having same names as columns in the CSV file
+Task-3,"Parse the CSV data into an array of structs/objects (Use of std library, C++11 features carries weight)"
+Task-4,Sort the Array based on the first column 'Time'
+Task-5,Output the entire sorted data as a points and linestring into a GeoJSON file
+Task-6,Load the sorted data into a postgres/mysql/sqlite database table with same columns (programmatically using DB drivers) and show output in pgAdmin/mysql
