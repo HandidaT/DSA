@@ -2,15 +2,15 @@
 
 
 void insertionsort(int *a, int n){
-	int key,j;
-	for(int i=0;i<n;i++){
-		key=a[i];
-		j=i-1;
-		while(j>-1 & a[j]>key){
-			a[j+1]=a[j];
-			j=j-1;
+	int key,i;
+	for(int j=0;j<n;j++){
+		key=a[j];
+		i=j-1;
+		while(i>-1 & a[i]>key){
+			a[i+1]=a[i];
+			i=i-1;
 		}
-		a[j+1]=key;
+		a[i+1]=key;
 	}
 }
 
