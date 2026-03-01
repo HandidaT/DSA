@@ -18,69 +18,52 @@ bool isPrime(int n)
     return true;
 }
 
-void Eratosthenes_Sieve(int upper,vector<int>& primeNumbers){
-  vector<bool> mark(sqrt(upper),true);
-  
-  mark[0]=false;
-  mark[1]=false;
-  
-  cout<<"Prime numbers below the squareroot of upperbound are: ";
-  
-  for(int i=0; i<=sqrt(upper); i++){
-    if(mark[i]==true){
-      for(int j=i*2;j<=sqrt(upper);j+=i){
-        mark[j]=false;
-      }
-    }
-     
-    if(mark[i]==true){
-      primeNumbers.push_back(i);
-      cout<<i<<" ";
-    }
-  }
-  
-  cout<<endl<<endl;
+void Eratosthenes_Sieve(int upper, vector<int>& primes)
+{
+    int limit = sqrt(upper);
+    vector<bool> mark(limit + 1, true);
+
+    mark[0] = mark[1] = false;
+
+    for(int i = 2; i * i <= limit; i++)
+        if(mark[i])
+            for(int j = i * i; j <= limit; j += i)
+                mark[j] = false;
+
+    for(int i = 2; i <= limit; i++)
+        if(mark[i])
+            primes.push_back(i);
 }
 
-void Segmented_Sieve(int upperbound,int lowerbound){
-  vector<bool> smark(upperbound-lowerbound+1,true);//smark is like isprime in codingninjas video
-  vector<int> primes;
-  vector<int> sprime;
-  
-  Eratosthenes_Sieve(upperbound,primes);
-  
-  for(int i=0;i<primes.size();i++){
-    int currPrime=primes[i];
-    int base=(floor(lowerbound/currPrime))*currPrime;
-    if(base<lowerbound){
-      base=base+currPrime;
+void Segmented_Sieve(int lowerbound, int upperbound)
+{
+    vector<int> primes;
+    Eratosthenes_Sieve(upperbound, primes);
+
+    vector<bool> smark(upperbound - lowerbound + 1, true);
+
+    for(int p : primes)
+    {
+        int base = max(p * p,
+                       ((lowerbound + p - 1) / p) * p);
+
+        for(int j = base; j <= upperbound; j += p)
+            smark[j - lowerbound] = false;
     }
-    
-    for(int j=base;j<=upperbound;j+=currPrime){
-      smark[j-lowerbound]=false;
-    }
-    
-    if(base==currPrime){
-      smark[base-lowerbound]=true;
-    }
-  }
-  
-  cout<<"Prime numbers between lower and upper bound are: ";
-  
-  for(int i=0;i<=upperbound-lowerbound;i++){
-    if(smark[i]==true){
-      sprime.push_back(i+lowerbound);
-      cout<<i+lowerbound<<" ";
-    }
-  }
-  cout<<endl;
+
+    if(lowerbound == 1)
+        smark[0] = false;
+
+    cout << "Primes in range: ";
+    for(int i = 0; i < smark.size(); i++)
+        if(smark[i])
+            cout << i + lowerbound << " ";
 }
 
 int main(){
     isPrime(11) ? cout << " true\n" : cout << " false\n";
     isPrime(15) ? cout << " true\n" : cout << " false\n";
 
-/*
   int t;
   cout<<endl<<"Enter the number of test cases: ";
   cin>>t;
@@ -104,7 +87,7 @@ int main(){
     cin>>u;
     cout<<endl;
     
-    Segmented_Sieve(u,l);
-  }*/
+    Segmented_Sieve(l,u);
+  }
 }
 
