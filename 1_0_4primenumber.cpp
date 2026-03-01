@@ -13,6 +13,22 @@ bool isPrime(int n)
     return true;
 }
 
+void Eratosthenes_Sieve_Primeslist(int upper)
+{
+    vector<bool> primes(upper, true);
+
+    primes[0] = primes[1] = false;
+
+    for(int i = 2; i*i <= upper; i++)
+        if(primes[i])
+            for(int j = i*i; j <=upper; j+=i)
+                primes[j] = false;
+
+    for(int i = 0; i < primes.size(); i++)
+        if(primes[i])
+            cout << i << " ";
+}
+
 void Eratosthenes_Sieve(int upper, vector<int>& primes)
 {
     int limit = sqrt(upper);
@@ -60,29 +76,33 @@ int main(){
     isPrime(15) ? cout << " true\n" : cout << " false\n";
 
   int t;
-  cout<<endl<<"Enter the number of test cases: ";
-  cin>>t;
+  // cout<<endl<<"Enter the number of test cases: ";
+  // cin>>t;
   //i is there to show the test case number in ascending order. Without i, test cases are numbered in descending order because condition in while loop is t--.
-  int i=t;
-  while(t--){
-    int l, u;
-    cout<<endl<<endl<<"----------------Test case ";
+  // int i=t;
+  // while(t--){
+  //   int l, u;
+  //   cout<<endl<<endl<<"----------------Test case ";
     
-    //if t was entered 10, t would be 9 because of t-- in while condition.
-    //so t=9, i=10(i equaled to t before t-- while condition). Hence 9+2-10==11-10==1.
-    cout<<t+2-i<<"----------------"<<endl;
+  //   //if t was entered 10, t would be 9 because of t-- in while condition.
+  //   //so t=9, i=10(i equaled to t before t-- while condition). Hence 9+2-10==11-10==1.
+  //   cout<<t+2-i<<"----------------"<<endl;
     
-    i-=2;
-    //without i-=2, if i is as t was before loop (10), then in next loop t=8, 8+2-10==10-10=0.
-    //if i is i--, 8+2-9==10-9==1. if i is i-=2, 8+2-8==10-8==2 and so on...
+  //   i-=2;
+  //   //without i-=2, if i is as t was before loop (10), then in next loop t=8, 8+2-10==10-10=0.
+  //   //if i is i--, 8+2-9==10-9==1. if i is i-=2, 8+2-8==10-8==2 and so on...
     
-    cout<<"Enter lower bound: ";
-    cin>>l; 
-    cout<<"Enter upper bound: ";
-    cin>>u;
-    cout<<endl;
+  //   cout<<"Enter lower bound: ";
+  //   cin>>l; 
+  //   cout<<"Enter upper bound: ";
+  //   cin>>u;
+  //   cout<<endl;
     
-    Segmented_Sieve(l,u);
-  }
+  //   Segmented_Sieve(l,u);
+  // }
+
+  cout<<endl<<"Enter the number: ";
+  cin>>t;
+  Eratosthenes_Sieve_Primeslist(t);
 }
 
