@@ -4,53 +4,68 @@
 //fibonnaci number of 0 is 0, 1 is 1 by default. why? find out...
 //fibonnaci numbers 0,1,1,2,3,5,8,13,21...
 
-int FibonnaciRecursive(int number){
-   if(number <= 1) return number;
-   return FibonnaciRecursive(number-1) + FibonnaciRecursive(number-2);
+// ---------- Recursive ----------
+int fib_recursive(int n) {
+    if (n <= 1) return n;
+    return fib_recursive(n - 1) + fib_recursive(n - 2);
 }
 
-int FibonnaciRecursiveMemoization(int number, int array[]){
-   if(number <= 1) {array[number] = number; return number;}
-   if(array[number] != 0) return array[number];
-   int result = FibonnaciRecursiveMemoization(number-1, array)
-                + FibonnaciRecursiveMemoization(number-2, array);
-   array[number] = result;
-   return result;
+// ---------- Memoization ----------
+int fib_memo(int n, int dp[]) {
+    if (n <= 1) return n;
+
+    if (dp[n] != -1)
+        return dp[n];
+
+    dp[n] = fib_memo(n - 1, dp) + fib_memo(n - 2, dp);
+    return dp[n];
 }
 
-int FibonnaciTabulation(int number, int array[]){
-    array[0] = 0;
-    array[1] = 1;
-    for(int i = 2; i<=number; i++){
-        array[i] = array[i-1] + array[i-2];
+// ---------- Tabulation ----------
+int fib_tabulation(int n) {
+    if (n <= 1) return n;
+
+    int dp[n + 1];
+    dp[0] = 0;
+    dp[1] = 1;
+
+    for (int i = 2; i <= n; i++) {
+        dp[i] = dp[i - 1] + dp[i - 2];
     }
-    return array[number];
+
+    return dp[n];
 }
 
-int FibonnaciSpaceOptimized(int number){
-    int a=0, b=1, result;
-    if(number <= 1) return number;
-    for(int i=2; i<=number; i++){
-        result = a + b;
-        a = b;
-        b = result;
+// ---------- Space Optimized ----------
+int fib_optimized(int n) {
+    if (n <= 1) return n;
+
+    int prev2 = 0, prev1 = 1, curr;
+
+    for (int i = 2; i <= n; i++) {
+        curr = prev1 + prev2;
+        prev2 = prev1;
+        prev1 = curr;
     }
-    return result;
+
+    return prev1;
 }
 
-int main(){
-    int num;
-    scanf("%d", &num);
-    int arr1[num + 1];
-    int arr2[num + 1];
+int main() {
+    int n;
+    scanf("%d", &n);
 
-    int arrSizeInBytes = sizeof(arr1);
-    memset(arr1, 0, arrSizeInBytes);
+    int dp[n + 1];
+    for (int i = 0; i <= n; i++)
+        dp[i] = -1;
 
-    printf("%d %d %d %d", FibonnaciRecursive(num), FibonnaciRecursiveMemoization(num, arr1)
-                        , FibonnaciTabulation(num, arr2), FibonnaciSpaceOptimized(num));
+    printf("Recursive: %d\n", fib_recursive(n));
+    printf("Memoization: %d\n", fib_memo(n, dp));
+    printf("Tabulation: %d\n", fib_tabulation(n));
+    printf("Optimized: %d\n", fib_optimized(n));
+
+    return 0;
 }
-
 
 
 
